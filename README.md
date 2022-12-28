@@ -68,11 +68,14 @@ container on the console. Some examples are:
     using namespace std;
     int main(){
         int array[] = {1,2,3,4,5};
-        //For arrays function needs to its length as second argument. 
-        //You can pass the length manually or use the len function provided by the library.
+        //For arrays, log function needs to array's length as second argument
+        //You can pass the length manually or use the len() function provided by the library
         log(array, 5);
         log(array,len(array));
         log(array,sizeof(array)/sizeof(array[0]));
+        //Or you can pass its type instead of length
+        log(array, type="ARR");
+        //ATTENTION! only ARR is allowed as type parameter
         return 0;
     } 
 ```
