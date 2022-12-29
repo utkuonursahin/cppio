@@ -86,7 +86,7 @@ void log(const std::list<T> &list, const std::string &sep=""){
 Usage: log(variableName);*/
 template <typename T>
 void log(const std::queue<T> &queue, const std::string &sep=""){
-	std::queue<int> q = queue;
+	std::queue<T> q = queue;
 	while(!q.empty()){
 		std::cout<<q.front();
 		if(q.size() != 1) std::cout<<sep;
