@@ -35,9 +35,12 @@ you can use the len() function that is provided by the library.
 */
 template <typename T>
 void log(T var[], int len){
-	for(int i = 0; i < len; i++)
-		std::cout<<var[i]<<" ";
-	std::cout<<std::endl;
+	std::cout<<"{";
+	for(int i = 0; i < len; i++){
+		std::cout<<var[i];
+		if(i != len-1) std::cout<<",";
+	}
+	std::cout<<"}"<<std::endl;
 	delete var;
 }
 /*
@@ -50,34 +53,43 @@ Do not pass anything than "ARR" as the type otherwise you get an error.
 template <typename T>
 void log(const T &var, const std::string &type){
 	if(type == "ARR"){
-		for(int i = 0; i < sizeof(var)/sizeof(var[0]); i++)
-			std::cout<<var[i]<<" ";
-		std::cout<<std::endl;
+		std::cout<<"{";
+		int size = sizeof(var)/sizeof(var[0]);
+		for(int i = 0; i < size; i++){
+			std::cout<<var[i];
+			if(i != size-1) std::cout<<",";
+		}
+		std::cout<<"}"<<std::endl;
 	} else std::cout<<"Invalid type"<<std::endl;
 }
 /*Prototype: void log(vector<T>,string):NULL
 Usage: log(variableName);*/
 template <typename T>
-void log(const std::vector<T> &vec){
-	for(int i : vec)
-		std::cout<<i<<" ";
+void log(const std::vector<T> &vec, const std::string &sep=""){
+	for(int i : vec){
+		std::cout<<i;
+		if(i != vec.size()-1) std::cout<<sep;
+	}
 	std::cout<<std::endl;
 }
 /*Prototype: void log(list<T>,string):NULL
 Usage: log(variableName);*/
 template <typename T>
-void log(const std::list<T> &list){
-	for(int i : list)
-		std::cout<<i<<" ";
+void log(const std::list<T> &list, const std::string &sep=""){
+	for(int i : list){
+		std::cout<<i;
+		if(i != list.size()-1) std::cout<<sep;
+	}
 	std::cout<<std::endl;
 }
 /*Prototype: void log(queue<T>,string):NULL
 Usage: log(variableName);*/
 template <typename T>
-void log(const std::queue<T> &queue){
+void log(const std::queue<T> &queue, const std::string &sep=""){
 	std::queue<int> q = queue;
 	while(!q.empty()){
-		std::cout<<q.front()<<" ";
+		std::cout<<q.front();
+		if(q.size() != 1) std::cout<<sep;
 		q.pop();
 	}
 	std::cout<<std::endl;
@@ -85,10 +97,10 @@ void log(const std::queue<T> &queue){
 /*Prototype: void log(stack<T>,string):NULL
 Usage: log(variableName);*/
 template <typename T>
-void log(const std::stack<T> &stack){
+void log(const std::stack<T> &stack, const std::string &sep=""){
 	std::stack<T> s = stack;
 	while(!s.empty()){
-		std::cout<<s.top()<<" ";
+		std::cout<<s.top()<<sep;
 		s.pop();
 	}
 	std::cout<<std::endl;
