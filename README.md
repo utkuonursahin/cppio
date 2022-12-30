@@ -73,7 +73,7 @@ the output on the console. The library is divided into two parts:
         return 0;
     } 
 ```
-Also, the `log()` function has a support for arrays, vectors, lists, queues and stacks. Once you
+Also, the `log()` function has a support for arrays, vectors, lists, queues, stacks and maps. Once you
 give one of these as the parameter to the `log()` function, it will display the contents of the
 container on the console. Some examples are:
 ```c++
@@ -153,6 +153,25 @@ between the elements of the container. The default separator is a one width spac
         //log the stack
         log(stack); //Output: What an amazing library!
         return 0;		
+    } 
+```
+```c++
+    #include "c_io.hpp"
+    #include<map>
+    using namespace std;
+    int main(){
+      //define a map
+      map<string, int> map;
+      //insert some key-value pairs into the map
+      map.insert({"one",1});
+      map.insert({"two",2});
+      map.insert({"three",3});
+      //log the map
+      log(map); //Output: {one:1,two:2,three:3}
+      int my_value = map["one"]; //my_value = 1
+      //define a hash_map
+      log(my_value); //Output: 1       
+      return 0;
     } 
 ```
 ## Contributing

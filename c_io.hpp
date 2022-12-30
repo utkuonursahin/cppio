@@ -1,12 +1,12 @@
 #ifndef C_IO_HPP
 #define C_IO_HPP
 #include <iostream>
-#include <sstream>
 #include <string>
 #include <vector>
 #include <list>
 #include <queue>
 #include <stack>
+#include <map>
 /*
 Prototype: T input(string):T
 Usage: T variableName = input<T>("prompt");
@@ -104,6 +104,17 @@ void log(const std::stack<T> &stack, const std::string &sep=" "){
 		s.pop();
 	}
 	std::cout<<std::endl;
+}
+/*Prototype: void log(map<T,T1>):NULL
+Usage: log(variableName);*/
+template <typename T, typename T1>
+void log(const std::map<T,T1> &map){
+	std::cout<<"{";
+	for(auto it = map.begin(); it != map.end(); it++){
+		std::cout<<it->first<<":"<<it->second;
+		if(it != --map.end()) std::cout<<",";
+	}
+	std::cout<<"}"<<std::endl;
 }
 /*Prototype: int len(T):length of the array
 Usage: len(arrayName);*/
