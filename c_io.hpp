@@ -65,7 +65,7 @@ void log(const T &var, const std::string &type){
 /*Prototype: void log(vector<T>,string):NULL
 Usage: log(variableName);*/
 template <typename T>
-void log(const std::vector<T> &vec, const std::string &sep=""){
+void log(const std::vector<T> &vec, const std::string &sep=" "){
 	for(int i : vec){
 		std::cout<<i;
 		if(i != vec.size()-1) std::cout<<sep;
@@ -75,7 +75,7 @@ void log(const std::vector<T> &vec, const std::string &sep=""){
 /*Prototype: void log(list<T>,string):NULL
 Usage: log(variableName);*/
 template <typename T>
-void log(const std::list<T> &list, const std::string &sep=""){
+void log(const std::list<T> &list, const std::string &sep=" "){
 	for(int i : list){
 		std::cout<<i;
 		if(i != list.size()-1) std::cout<<sep;
@@ -85,7 +85,7 @@ void log(const std::list<T> &list, const std::string &sep=""){
 /*Prototype: void log(queue<T>,string):NULL
 Usage: log(variableName);*/
 template <typename T>
-void log(const std::queue<T> &queue, const std::string &sep=""){
+void log(const std::queue<T> &queue, const std::string &sep=" "){
 	std::queue<T> q = queue;
 	while(!q.empty()){
 		std::cout<<q.front();
@@ -97,7 +97,7 @@ void log(const std::queue<T> &queue, const std::string &sep=""){
 /*Prototype: void log(stack<T>,string):NULL
 Usage: log(variableName);*/
 template <typename T>
-void log(const std::stack<T> &stack, const std::string &sep=""){
+void log(const std::stack<T> &stack, const std::string &sep=" "){
 	std::stack<T> s = stack;
 	while(!s.empty()){
 		std::cout<<s.top()<<sep;
