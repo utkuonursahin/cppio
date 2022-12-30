@@ -19,6 +19,16 @@ T input(const std::string &prompt){
 	return var;
 }
 /*
+Prototype: input(string,T&):NULL
+Usage: 	T variableName;
+		input("prompt",T variableName);
+*/
+template <typename T>
+void input(const std::string &prompt,T &var){
+	std::cout<<prompt;
+	std::cin>>var;
+}
+/*
 Prototype: void log(T):NULL
 Usage: log(variableName);
 */

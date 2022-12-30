@@ -1,4 +1,4 @@
-# `c_iolib` Simple C++ library for console based input/output operations.
+# `c_iolib` Simple yet powerful C++ library for console based input/output operations.
 Have you ever been in a situation where you write lines of `cout<<` and
 `cin>>` statements to get input from the user and display the output on the
 console? If yes, then this library is for you. It provides a simple and powerful
@@ -19,7 +19,7 @@ interface to get input from the user and display the output on the console.
         return 0;
     }
 ```
-_Not that good, there should be a prettier and simple way to do this._
+<p align="center">There should be prettier and simple way to do this...</p>
 
 ## Installation
 Download the source code from this repository and include the `c_io.hpp` file
@@ -27,11 +27,12 @@ in your environment. Then you are free to use the library.
 ## Usage
 The library provides a simple interface to get input from the user and display
 the output on the console. The library is divided into two parts:
-1. `input()` - This function is used to get input from the user. It takes a
-   string as a parameter which is displayed on the console to ask the user for input. 
-   Also, you need to specify the type that the function will return, before
-   the function call parenthesis `input<type>("prompt message")`. It returns the input entered by the user.
-   An example of this function is:
+1. `input()` - This function is used to get input from the user. It has two different variations.
+   
+First variation takes a string as a parameter which is displayed on the console to ask the user for input. 
+Also, you have to specify the type that the function will return, before
+the function call parenthesis `input<type>("prompt message")`. It returns the input entered by the user.
+An example of this function is:
 ```c++
     #include "c_io.hpp"
     #include<string>
@@ -45,7 +46,22 @@ the output on the console. The library is divided into two parts:
         return 0;
     } //You don't need the cout statements as well, but we are not there yet :)    
 ```
-
+The second variation of the `input()` function takes a string as a parameter as well, plus it takes a second 
+parameter which is the variable to which the input will be stored. This function does not return anything.
+An example of this function is:
+```c++
+    #include "c_io.hpp"
+    #include<string>
+    using namespace std;
+    //The input that the user enters will be stored in the variable that is passed to the function.
+    int main(){
+        int age;
+        input("Enter your age: ",age);
+        cout<<age;
+    } 
+```
+You can use whichever variation you want. They both do the same thing however the second variation is more efficient because
+of its implementation details. But again, it's not that important just use which one seems more convenient to you.
 2. `log()` - This function is used to display the output on the console. It takes
    only one argument which is the output to be displayed on the console. It displays 
    the output on the console and returns nothing.
@@ -181,13 +197,13 @@ Pull requests are welcome. For major changes,
 please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
+## Version
+1.1.2
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## Version
-1.1.1
-
-## What does `c_iolib` mean?
+### What does `c_iolib` mean?
 It stands for `console input/output library`.
 
 ### Developer Notes
@@ -196,3 +212,5 @@ input from the user and display the output on the console. For these reasons I b
 on top of the `iostream` library. I'm aware of there are some more performant ways of what I did
 via dealing with more low-level details. If you have any suggestions or improvements, please feel 
 free to open an issue or a pull request. I'll be happy to learn from you.
+
+**First release on 28/12/2022 by [Utku Onur ŞAHİN](https://www.linkedin.com/in/utku-onur-sahin/)**
