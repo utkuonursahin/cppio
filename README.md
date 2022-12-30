@@ -28,40 +28,43 @@ in your environment. Then you are free to use the library.
 The library provides a simple interface to get input from the user and display
 the output on the console. The library is divided into two parts:
 1. `input()` - This function is used to get input from the user. It has two different variations.
-   
-First variation takes a string as a parameter which is displayed on the console to ask the user for input. 
-Also, you have to specify the type that the function will return, before
-the function call parenthesis `input<type>("prompt message")`. It returns the input entered by the user.
-An example of this function is:
-```c++
-    #include "c_io.hpp"
-    #include<string>
-    using namespace std;
-    int main(){
-        int num = input<int>("Enter an integer: ");
-        cout << "You entered: " << num << endl;
-        //You don't even need to declare the type of the variable
-        auto str = input<string>("Enter a string: ");
-        cout << "You entered: " << str << endl;
-        return 0;
-    } //You don't need the cout statements as well, but we are not there yet :)    
-```
-The second variation of the `input()` function takes a string as a parameter as well, plus it takes a second 
-parameter which is the variable to which the input will be stored. This function does not return anything.
-An example of this function is:
-```c++
-    #include "c_io.hpp"
-    #include<string>
-    using namespace std;
-    //The input that the user enters will be stored in the variable that is passed to the function.
-    int main(){
-        int age;
-        input("Enter your age: ",age);
-        cout<<age;
-    } 
-```
-You can use whichever variation you want. They both do the same thing however the second variation is more efficient because
-of its implementation details. But again, it's not that important just use which one seems more convenient to you.
+
+
+   First variation takes a string as a parameter which is displayed on the console to ask the user for input. 
+   Also, you have to specify the type that the function will return, before
+   the function call parenthesis `input<type>("prompt message")`. It returns the input entered by the user.
+   An example of this function is:
+   ```c++
+       #include "c_io.hpp"
+       #include<string>
+       using namespace std;
+       int main(){
+           int num = input<int>("Enter an integer: ");
+           cout << "You entered: " << num << endl;
+           //You don't even need to declare the type of the variable
+           auto str = input<string>("Enter a string: ");
+           cout << "You entered: " << str << endl;
+           return 0;
+       } //You don't need the cout statements as well, but we are not there yet :)    
+   ```
+   The second variation of the `input()` function takes a string as a parameter as well, plus it takes a second 
+   parameter which is the variable to which the input will be stored. This function does not return anything.
+   An example of this function is:
+   ```c++
+       #include "c_io.hpp"
+       #include<string>
+       using namespace std;
+       //The input that the user enters will be stored in the variable that is passed to the function.
+       int main(){
+           int age;
+           input("Enter your age: ",age);
+           cout<<age;
+       } 
+   ```
+   You can use whichever variation you want. They both do the same thing however the second variation is more efficient because
+   of its implementation details. But again, it's not that important just use which one seems more convenient to you.
+
+
 2. `log()` - This function is used to display the output on the console. It takes
    only one argument which is the output to be displayed on the console. It displays 
    the output on the console and returns nothing.
