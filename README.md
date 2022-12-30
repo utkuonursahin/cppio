@@ -9,10 +9,12 @@ interface to get input from the user and display the output on the console.
     using namespace std;
     int main(){
         cout<<"Enter a number: ";
-        int num = cin>>num;
+        int num;
+        cin>>num;
         cout << "You entered: " << num << endl;
         cout<<"Enter a string: ";
-        string str = cin>>str;
+        string str;
+        cin>>str;
         cout << "You entered: " << str << endl;
         return 0;
     }
@@ -183,7 +185,7 @@ Please make sure to update tests as appropriate.
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ## Version
-1.1.0
+1.1.1
 
 ## What does `c_iolib` mean?
 It stands for `console input/output library`.
