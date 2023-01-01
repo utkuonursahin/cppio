@@ -110,7 +110,8 @@ template <typename T>
 void log(const std::stack<T> &stack, const std::string &sep=" "){
 	std::stack<T> s = stack;
 	while(!s.empty()){
-		std::cout<<s.top()<<sep;
+		std::cout<<s.top();
+		if(s.size() != 1) std::cout<<sep;
 		s.pop();
 	}
 	std::cout<<std::endl;

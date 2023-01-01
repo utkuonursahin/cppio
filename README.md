@@ -201,7 +201,7 @@ please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 ## Version
-1.1.2
+1.1.3
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
