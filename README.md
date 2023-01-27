@@ -96,7 +96,8 @@ the output on the console. The library is divided into two parts:
 ```
 Also, the `log()` function has a support for arrays, vectors, lists, queues, stacks and maps. Once you
 give one of these as the parameter to the `log()` function, it will display the contents of the
-container on the console. Some examples are:
+container on the console. Some examples are below.
+#### `log()` example for Array:
 ```c++
     #include "c_io.hpp"
     using namespace std;
@@ -113,8 +114,9 @@ container on the console. Some examples are:
         return 0;
     }
 ```
-If you want to write the STL containers, you have second parameter which is the separator
-between the elements of the container. The default separator is a one width space (`" "`). Some examples are:
+For printing STL containers, you have second(optional) parameter which is the separator
+between the elements of the container. The default separator is `" "`.
+#### `log()` example for Vector:
 ```c++
     #include "c_io.hpp"
     #include<vector>
@@ -126,10 +128,11 @@ between the elements of the container. The default separator is a one width spac
         for(int i = 1; i <= 5; i++)
             vec.push_back(i);
         //log the vector
-        log(vec,","); //Output: 1,2,3,4,5
+        log(vec); //Output: 1 2 3 4 5
         return 0;		
     } 
 ```
+#### `log()` example for List:
 ```c++
     #include "c_io.hpp"
     #include<list>
@@ -145,6 +148,7 @@ between the elements of the container. The default separator is a one width spac
         return 0;
     } 
 ```
+#### `log()` example for Queue:
 ```c++
     #include "c_io.hpp"
     #include<queue>
@@ -156,10 +160,11 @@ between the elements of the container. The default separator is a one width spac
         for(int i = 1; i <= 5; i++)
             queue.push(i);
         //log the queue
-        log(queue,"|"); //Output: 1|2|3|4|5
+        log(queue,"<-"); //Output: 1<-2<-3<-4<-5
         return 0;		
     } 
 ```
+#### `log()` example for Stack:
 ```c++
     #include "c_io.hpp"
     #include<stack>
@@ -176,6 +181,7 @@ between the elements of the container. The default separator is a one width spac
         return 0;		
     } 
 ```
+#### `log()` example for Map:
 ```c++
     #include "c_io.hpp"
     #include<map>
@@ -195,15 +201,15 @@ between the elements of the container. The default separator is a one width spac
       return 0;
     } 
 ```
-## Contributing
+### Contributing
 Pull requests are welcome. For major changes, 
 please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
-## Version
+### Version
 1.1.3
 
-## License
+### License
 [MIT](https://choosealicense.com/licenses/mit/)
 
 ### What does `c_iolib` mean?

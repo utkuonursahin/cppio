@@ -20,8 +20,7 @@ T input(const std::string &prompt){
 }
 /*
 Prototype: input(string,T&):NULL
-Usage: 	T variableName;
-		input("prompt",T variableName);
+Usage: 	T variableName = input("prompt",T variableName);
 */
 template <typename T>
 void input(const std::string &prompt,T &var){
