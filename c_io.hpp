@@ -61,7 +61,7 @@ Do not pass anything than "ARR" as the type otherwise you get an error.
 */
 template <typename T>
 void log(const T &var, const std::string &type){
-	if(type == "ARR"){
+	if(type == "[]"){
 		std::cout<<"{";
 		int size = sizeof(var)/sizeof(var[0]);
 		for(int i = 0; i < size; i++){
@@ -69,7 +69,7 @@ void log(const T &var, const std::string &type){
 			if(i != size-1) std::cout<<",";
 		}
 		std::cout<<"}"<<std::endl;
-	} else std::cout<<"Invalid type"<<std::endl;
+	} else std::cout<<"Invalid type passed to the log function!\nOnly \"[]\" is allowed as type parameter to the log function!"<<std::endl;
 }
 /*Prototype: void log(vector<T>,string):NULL
 Usage: log(variableName);*/

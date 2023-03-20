@@ -105,12 +105,12 @@ container on the console. Some examples are below.
         int array[] = {1,2,3,4,5};
         //For arrays, log function needs to array's length as second argument
         //You can pass the length manually or use the len() function provided by the library
-        log(array, 5); //Output: [1,2,3,4,5]
+        log(array,5); //Output: [1,2,3,4,5]
         log(array,len(array));
         log(array,sizeof(array)/sizeof(array[0]));
-        //Or you can pass its type instead of length
-        log(array, type="ARR"); //Output: [1,2,3,4,5]
-        //ATTENTION! only ARR is allowed as type parameter
+        //Or you can indicate it's an array by passing square brackets to the function
+        log(array,"[]"); //Output: [1,2,3,4,5]
+        //ATTENTION! only "[]" is allowed as type parameter
         return 0;
     }
 ```
