@@ -1,4 +1,4 @@
-# `c_iolib` Simple yet powerful C++ library for console based input/output operations.
+# `c_io` Simple yet powerful C++ library for console based input/output operations.
 Have you ever been in a situation where you write lines of `cout<<` and
 `cin>>` statements to get input from the user and display the output on the
 console? If yes, then this library is for you. It provides a simple and powerful
@@ -212,8 +212,8 @@ Please make sure to update tests as appropriate.
 ### License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-### What does `c_iolib` mean?
-It stands for `console input/output library`.
+### What does `c_io` mean?
+It stands for `console input/output`.
 
 ### Developer Notes
 I'm not a C++ guru. This library only aims to provide a simple and powerful interface to get 
