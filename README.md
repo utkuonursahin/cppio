@@ -25,7 +25,7 @@ There should be a better way to do this...
 Download the source code from this repository and include the `c_io.hpp` file
 in your environment. Then you are free to use the library.
 ## API
-### `input\<T>\("prompt")`
+### `input<T>("prompt")`
    Takes a string as a parameter which is displayed on the console to ask the user for input. 
    Also, you have to specify the type that the function will return, before
    the function call parenthesis. It returns the input entered by the user. An example of this function is:
