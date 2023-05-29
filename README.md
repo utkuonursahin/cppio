@@ -135,7 +135,7 @@ You can pass the length manually or use the len() function provided by the libra
         for(int i = 1; i <= 5; i++)
             list.push_back(i);
         //log the list
-        log(list,"->"); //Output: 1 2 3 4 5
+        log(list); //Output: 1 2 3 4 5
         return 0;
     } 
 ```
@@ -204,7 +204,7 @@ please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 ### Version
-1.1.6
+1.1.7
 
 ### License
 [MIT](https://choosealicense.com/licenses/mit/)
