@@ -1,4 +1,4 @@
-# `c_io` Simple yet powerful C++ library for console based input/output operations.
+# Simple yet powerful C++ library for console based input and output operations.
 Have you ever been in a situation where you write lines of `cout<<` and
 `cin>>` statements to get input from the user and display the output on the
 console? If yes, then this library is for you. It provides a simple and powerful
@@ -19,21 +19,16 @@ interface to get input from the user and display the output on the console.
         return 0;
     }
 ```
-<p align="center">There should be prettier and simple way to do this...</p>
+There should be a better way to do this...
 
 ## Installation
 Download the source code from this repository and include the `c_io.hpp` file
 in your environment. Then you are free to use the library.
-## Usage
-The library provides a simple interface to get input from the user and display
-the output on the console. The library is divided into two parts:
-1. `input()` - This function is used to get input from the user. It has two different variations.
-
-
-   First variation takes a string as a parameter which is displayed on the console to ask the user for input. 
+## API
+### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">input\<T>\("prompt")</span>
+   Takes a string as a parameter which is displayed on the console to ask the user for input. 
    Also, you have to specify the type that the function will return, before
-   the function call parenthesis `input<type>("prompt message")`. It returns the input entered by the user.
-   An example of this function is:
+   the function call parenthesis. It returns the input entered by the user. An example of this function is:
    ```c++
        #include "c_io.hpp"
        #include<string>
@@ -47,8 +42,9 @@ the output on the console. The library is divided into two parts:
            return 0;
        } //You don't need the cout statements as well, but we are not there yet :)    
    ```
-   The second variation of the `input()` function takes a string as a parameter as well, plus it takes a second 
-   parameter which is the variable to which the input will be stored. This function does not return anything.
+### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">input("prompt",variable)</span>
+   Takes a string as a parameter as well, plus it takes a second parameter which is the variable to which the input will be stored. 
+   This function does not return anything.
    An example of this function is:
    ```c++
        #include "c_io.hpp"
@@ -61,13 +57,11 @@ the output on the console. The library is divided into two parts:
            cout<<age;
        } 
    ```
-   You can use whichever variation you want. They both do the same thing however the second variation is more efficient because
-   of its implementation details. But again, it's not that important just use which one seems more convenient to you.
+### <div style="background-color:#343942; padding:10px 25px; border-radius:5px; font-size:16px; line-height: 20px;">👉 You can use whichever variation you want. They both do the same thing however the second variation is more efficient because of its implementation details.</div>
 
-
-2. `log()` - This function is used to display the output on the console. It takes
-   only one argument which is the output to be displayed on the console. It displays 
-   the output on the console and returns nothing.
+### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(variable)</span>
+   This function displays the output on the console. It takes a variable to be displayed on the console. 
+   It displays the output on the console and returns nothing.
    An example of this function is:
 ```c++
     #include "c_io.hpp"
@@ -94,29 +88,25 @@ the output on the console. The library is divided into two parts:
         return 0;
     } 
 ```
-Also, the `log()` function has a support for arrays, vectors, lists, queues, stacks and maps. Once you
-give one of these as the parameter to the `log()` function, it will display the contents of the
-container on the console. Some examples are below.
-#### `log()` example for Array:
+### <div style="background-color:#343942; padding:10px 25px; border-radius:5px; font-size:16px; line-height: 20px;">👉 log( ) function supports arrays, vectors, lists, queues, stacks and maps.</div>
+### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(array, len(array))</span>
+For arrays, you have to pass the array's length as second argument
+You can pass the length manually or use the len() function provided by the library
+#### Example for array:
 ```c++
     #include "c_io.hpp"
     using namespace std;
     int main(){
         int array[] = {1,2,3,4,5};
-        //For arrays, log function needs to array's length as second argument
-        //You can pass the length manually or use the len() function provided by the library
         log(array,5); //Output: [1,2,3,4,5]
-        log(array,len(array));
-        log(array,sizeof(array)/sizeof(array[0]));
-        //Or you can indicate it's an array by passing square brackets to the function
-        log(array,"[]"); //Output: [1,2,3,4,5]
-        //ATTENTION! only "[]" is allowed as type parameter
+        log(array,len(array)); //Output: [1,2,3,4,5]
+        log(array,sizeof(array)/sizeof(array[0])); //Output: [1,2,3,4,5]
         return 0;
     }
 ```
-For printing STL containers, you have second(optional) parameter which is the separator
-between the elements of the container. The default separator is `" "`.
-#### `log()` example for Vector:
+### <div style="background-color:#343942; padding:10px 25px; border-radius:5px; font-size:16px; line-height: 20px;">👉 For printing STL containers, you have second(optional) separator parameter. Default separator is `" "`.</div>
+### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(vector,separator)</span>
+#### Example for vector:
 ```c++
     #include "c_io.hpp"
     #include<vector>
@@ -132,7 +122,8 @@ between the elements of the container. The default separator is `" "`.
         return 0;		
     } 
 ```
-#### `log()` example for List:
+### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(list,separator)</span>
+#### Example for list:
 ```c++
     #include "c_io.hpp"
     #include<list>
@@ -148,7 +139,8 @@ between the elements of the container. The default separator is `" "`.
         return 0;
     } 
 ```
-#### `log()` example for Queue:
+### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(queue,separator)</span>
+#### Example for queue:
 ```c++
     #include "c_io.hpp"
     #include<queue>
@@ -164,7 +156,8 @@ between the elements of the container. The default separator is `" "`.
         return 0;		
     } 
 ```
-#### `log()` example for Stack:
+### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(stack,separator)</span>
+#### Example for stack:
 ```c++
     #include "c_io.hpp"
     #include<stack>
@@ -181,7 +174,8 @@ between the elements of the container. The default separator is `" "`.
         return 0;		
     } 
 ```
-#### `log()` example for Map:
+### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(map,separator)</span>
+#### Example for map:
 ```c++
     #include "c_io.hpp"
     #include<map>
@@ -207,7 +201,7 @@ please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 ### Version
-1.1.3
+1.1.4
 
 ### License
 [MIT](https://choosealicense.com/licenses/mit/)

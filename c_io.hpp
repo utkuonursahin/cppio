@@ -36,7 +36,7 @@ void log(const T &var){
 	std::cout<<var<<std::endl;
 }
 /*
-Prototype: void log(T,int):NULL
+Prototype: void log(T[],int):NULL
 Usage: log(variableName,len);
 If you want to print the array, you must specify the length.
 General formula for the length that you can use is: sizeof(arr)/sizeof(arr[0]) or
@@ -51,25 +51,6 @@ void log(T var[], int len){
 	}
 	std::cout<<"}"<<std::endl;
 	delete var;
-}
-/*
-Prototype: void log(T,string):NULL
-Usage: log(variableName,type="ARR");
-If you want to print the array, you must specify the type.
-The only parameter that is allowed is "ARR" for the type.
-Do not pass anything than "ARR" as the type otherwise you get an error.
-*/
-template <typename T>
-void log(const T &var, const std::string &type){
-	if(type == "[]"){
-		std::cout<<"{";
-		int size = sizeof(var)/sizeof(var[0]);
-		for(int i = 0; i < size; i++){
-			std::cout<<var[i];
-			if(i != size-1) std::cout<<",";
-		}
-		std::cout<<"}"<<std::endl;
-	} else std::cout<<"Invalid type passed to the log function!\nOnly \"[]\" is allowed as type parameter to the log function!"<<std::endl;
 }
 /*Prototype: void log(vector<T>,string):NULL
 Usage: log(variableName);*/
