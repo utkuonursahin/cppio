@@ -7,10 +7,7 @@
 #include <queue>
 #include <stack>
 #include <map>
-/*
-Prototype: T input(string):T
-Usage: T variableName = input<T>("prompt");
-*/
+//Usage: T variableName = input<T>("prompt");
 template <typename T>
 T input(const std::string &prompt){
 	std::cout<<prompt;
@@ -18,25 +15,25 @@ T input(const std::string &prompt){
 	std::cin>>var;
 	return var;
 }
-/*
-Prototype: input(string,T&):NULL
-Usage: 	T variableName = input("prompt",T variableName);
-*/
+//Usage: T variableName = input("prompt",T variableName);
 template <typename T>
 void input(const std::string &prompt,T &var){
 	std::cout<<prompt;
 	std::cin>>var;
 }
-/*
-Prototype: void log(T):NULL
-Usage: log(variableName);
-*/
+//Usage: log(variableName);
 template <typename T>
 void log(const T &var){
 	std::cout<<var<<std::endl;
 }
+//Usage: log(variableName,variableName,...);
+template <typename Arg, typename... Args>
+void log(const Arg &arg, const Args&... args){
+	std::cout<<arg;
+	log(args...);
+}
+
 /*
-Prototype: void log(T[],int):NULL
 Usage: log(variableName,len);
 If you want to print the array, you must specify the length.
 General formula for the length that you can use is: sizeof(arr)/sizeof(arr[0]) or
@@ -52,52 +49,47 @@ void log(T var[], int len){
 	std::cout<<"}"<<std::endl;
 	delete var;
 }
-/*Prototype: void log(vector<T>,string):NULL
-Usage: log(variableName);*/
+//Usage: log(variableName);
 template <typename T>
-void log(const std::vector<T> &vec, const std::string &sep=" "){
+void log(const std::vector<T> &vec){
 	for(int i : vec){
 		std::cout<<i;
-		if(i != vec.size()-1) std::cout<<sep;
+		if(i != vec.size()-1) std::cout<<" ";
 	}
 	std::cout<<std::endl;
 }
-/*Prototype: void log(list<T>,string):NULL
-Usage: log(variableName);*/
+//Usage: log(variableName);
 template <typename T>
-void log(const std::list<T> &list, const std::string &sep=" "){
+void log(const std::list<T> &list){
 	for(int i : list){
 		std::cout<<i;
-		if(i != list.size()-1) std::cout<<sep;
+		if(i != list.size()-1) std::cout<<" ";
 	}
 	std::cout<<std::endl;
 }
-/*Prototype: void log(queue<T>,string):NULL
-Usage: log(variableName);*/
+//Usage: log(variableName);
 template <typename T>
-void log(const std::queue<T> &queue, const std::string &sep=" "){
+void log(const std::queue<T> &queue){
 	std::queue<T> q = queue;
 	while(!q.empty()){
 		std::cout<<q.front();
-		if(q.size() != 1) std::cout<<sep;
+		if(q.size() != 1) std::cout<<" ";
 		q.pop();
 	}
 	std::cout<<std::endl;
 }
-/*Prototype: void log(stack<T>,string):NULL
-Usage: log(variableName);*/
+//Usage: log(variableName);
 template <typename T>
-void log(const std::stack<T> &stack, const std::string &sep=" "){
+void log(const std::stack<T> &stack){
 	std::stack<T> s = stack;
 	while(!s.empty()){
 		std::cout<<s.top();
-		if(s.size() != 1) std::cout<<sep;
+		if(s.size() != 1) std::cout<<" ";
 		s.pop();
 	}
 	std::cout<<std::endl;
 }
-/*Prototype: void log(map<T,T1>):NULL
-Usage: log(variableName);*/
+//Usage: log(variableName);
 template <typename T, typename T1>
 void log(const std::map<T,T1> &map){
 	std::cout<<"{";
@@ -107,8 +99,7 @@ void log(const std::map<T,T1> &map){
 	}
 	std::cout<<"}"<<std::endl;
 }
-/*Prototype: int len(T):length of the array
-Usage: len(arrayName);*/
+//Usage: len(arrayName);
 template <typename T>
 int len(const T &var){
 	return sizeof(var)/sizeof(var[0]);

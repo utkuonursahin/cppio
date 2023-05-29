@@ -75,6 +75,7 @@ in your environment. Then you are free to use the library.
         return 0;
     } 
 ```
+`👉 log( ) function supports output multiple variables`
 ```c++
     #include "c_io.hpp"
     #include<string>
@@ -82,7 +83,7 @@ in your environment. Then you are free to use the library.
     int main(){
         auto name = input<string>("Enter your name: ");
         auto surname = input<string>("Enter your surname: ");
-        log("Hello, " + name + " " + surname);
+        log("Hello, ",name, surname); //Hello, John Foo
         /*Without log function you would have to write:
         cout << "Hello, " << name << " " << surname << endl;*/
         return 0;
@@ -104,8 +105,7 @@ You can pass the length manually or use the len() function provided by the libra
         return 0;
     }
 ```
-`👉 For printing STL containers, you have second(optional) separator parameter. Default separator is " ".`
-### `log(vector,separator)`
+### `log(vector)`
 #### Example for vector:
 ```c++
     #include "c_io.hpp"
@@ -122,7 +122,7 @@ You can pass the length manually or use the len() function provided by the libra
         return 0;		
     } 
 ```
-### `log(list,separator)`
+### `log(list)`
 #### Example for list:
 ```c++
     #include "c_io.hpp"
@@ -135,11 +135,11 @@ You can pass the length manually or use the len() function provided by the libra
         for(int i = 1; i <= 5; i++)
             list.push_back(i);
         //log the list
-        log(list,"->"); //Output: 1->2->3->4->5
+        log(list,"->"); //Output: 1 2 3 4 5
         return 0;
     } 
 ```
-### `log(queue,separator)`
+### `log(queue)`
 #### Example for queue:
 ```c++
     #include "c_io.hpp"
@@ -152,11 +152,11 @@ You can pass the length manually or use the len() function provided by the libra
         for(int i = 1; i <= 5; i++)
             queue.push(i);
         //log the queue
-        log(queue,"<-"); //Output: 1<-2<-3<-4<-5
+        log(queue); //Output: 1 2 3 4 5
         return 0;		
     } 
 ```
-### `log(stack,separator)`
+### `log(stack)`
 #### Example for stack:
 ```c++
     #include "c_io.hpp"
@@ -174,7 +174,7 @@ You can pass the length manually or use the len() function provided by the libra
         return 0;		
     } 
 ```
-### `log(map,separator)`
+### `log(map)`
 #### Example for map:
 ```c++
     #include "c_io.hpp"
@@ -195,21 +195,21 @@ You can pass the length manually or use the len() function provided by the libra
       return 0;
     } 
 ```
+### What does `c_io` mean?
+It stands for `console input/output`.
+
 ### Contributing
 Pull requests are welcome. For major changes, 
 please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 ### Version
-1.1.5
+1.1.6
 
 ### License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-### What does `c_io` mean?
-It stands for `console input/output`.
-
-### Developer Notes
+#### Developer Notes
 I'm not a C++ guru. This library only aims to provide a simple and powerful interface to get 
 input from the user and display the output on the console. For these reasons I built this library
 on top of the `iostream` library. I'm aware of there are some more performant ways of what I did
