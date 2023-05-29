@@ -25,7 +25,7 @@ There should be a better way to do this...
 Download the source code from this repository and include the `c_io.hpp` file
 in your environment. Then you are free to use the library.
 ## API
-### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">input\<T>\("prompt")</span>
+### `input\<T>\("prompt")`
    Takes a string as a parameter which is displayed on the console to ask the user for input. 
    Also, you have to specify the type that the function will return, before
    the function call parenthesis. It returns the input entered by the user. An example of this function is:
@@ -42,7 +42,7 @@ in your environment. Then you are free to use the library.
            return 0;
        } //You don't need the cout statements as well, but we are not there yet :)    
    ```
-### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">input("prompt",variable)</span>
+### `input("prompt",variable)`
    Takes a string as a parameter as well, plus it takes a second parameter which is the variable to which the input will be stored. 
    This function does not return anything.
    An example of this function is:
@@ -57,9 +57,9 @@ in your environment. Then you are free to use the library.
            cout<<age;
        } 
    ```
-### <div style="background-color:#343942; padding:10px 25px; border-radius:5px; font-size:16px; line-height: 20px;">👉 You can use whichever variation you want. They both do the same thing however the second variation is more efficient because of its implementation details.</div>
+`👉 You can use whichever variation you want. They both do the same thing however the second variation is more efficient because of its implementation details.`
 
-### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(variable)</span>
+### `log(variable)`
    This function displays the output on the console. It takes a variable to be displayed on the console. 
    It displays the output on the console and returns nothing.
    An example of this function is:
@@ -88,8 +88,8 @@ in your environment. Then you are free to use the library.
         return 0;
     } 
 ```
-### <div style="background-color:#343942; padding:10px 25px; border-radius:5px; font-size:16px; line-height: 20px;">👉 log( ) function supports arrays, vectors, lists, queues, stacks and maps.</div>
-### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(array, len(array))</span>
+`👉 log( ) function supports arrays, vectors, lists, queues, stacks and maps.`
+### `log(array, len(array))`
 For arrays, you have to pass the array's length as second argument
 You can pass the length manually or use the len() function provided by the library
 #### Example for array:
@@ -104,8 +104,8 @@ You can pass the length manually or use the len() function provided by the libra
         return 0;
     }
 ```
-### <div style="background-color:#343942; padding:10px 25px; border-radius:5px; font-size:16px; line-height: 20px;">👉 For printing STL containers, you have second(optional) separator parameter. Default separator is `" "`.</div>
-### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(vector,separator)</span>
+`👉 For printing STL containers, you have second(optional) separator parameter. Default separator is " ".`
+### `log(vector,separator)`
 #### Example for vector:
 ```c++
     #include "c_io.hpp"
@@ -122,7 +122,7 @@ You can pass the length manually or use the len() function provided by the libra
         return 0;		
     } 
 ```
-### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(list,separator)</span>
+### `log(list,separator)`
 #### Example for list:
 ```c++
     #include "c_io.hpp"
@@ -139,7 +139,7 @@ You can pass the length manually or use the len() function provided by the libra
         return 0;
     } 
 ```
-### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(queue,separator)</span>
+### `log(queue,separator)`
 #### Example for queue:
 ```c++
     #include "c_io.hpp"
@@ -156,7 +156,7 @@ You can pass the length manually or use the len() function provided by the libra
         return 0;		
     } 
 ```
-### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(stack,separator)</span>
+### `log(stack,separator)`
 #### Example for stack:
 ```c++
     #include "c_io.hpp"
@@ -174,7 +174,7 @@ You can pass the length manually or use the len() function provided by the libra
         return 0;		
     } 
 ```
-### <div style="width:100; background-color:#343942; padding:10px 5px; border-radius:5px; letter-spacing:1px;">log(map,separator)</span>
+### `log(map,separator)`
 #### Example for map:
 ```c++
     #include "c_io.hpp"
@@ -201,7 +201,7 @@ please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 ### Version
-1.1.4
+1.1.5
 
 ### License
 [MIT](https://choosealicense.com/licenses/mit/)
