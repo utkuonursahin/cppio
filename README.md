@@ -22,17 +22,33 @@ interface to get input from the user and display the output on the console.
 There should be a better way to do this...
 
 ## Installation
-Download the source code from this repository and include the `c_io.hpp` file
-in your environment. Then you are free to use the library.
+Download the source code from this repository and include the `cppio.hpp` file
+in your environment. Then include it in your `.cpp` file as follows:
+
+`main.cpp`
+```c++
+    #include "cppio.hpp"
+```
+`main.cpp`
+
+Finally, use the namespace `cppIO` to access the library functions.
+```c++
+    #include "cppio.hpp"
+    using namespace cppIO;
+    int main(){
+        ...
+    }
+```
 ## API
 ### `input<T>("prompt")`
    Takes a string as a parameter which is displayed on the console to ask the user for input. 
    Also, you have to specify the type that the function will return, before
    the function call parenthesis. It returns the input entered by the user. An example of this function is:
    ```c++
-       #include "c_io.hpp"
+       #include "cppio.hpp"
        #include<string>
        using namespace std;
+       using namespace cppIO;
        int main(){
            int num = input<int>("Enter an integer: ");
            cout << "You entered: " << num << endl;
@@ -47,9 +63,10 @@ in your environment. Then you are free to use the library.
    This function does not return anything.
    An example of this function is:
    ```c++
-       #include "c_io.hpp"
+       #include "cppio.hpp"
        #include<string>
-       using namespace std;
+	   using namespace std;
+       using namespace cppIO;
        //The input that the user enters will be stored in the variable that is passed to the function.
        int main(){
            int age;
@@ -64,9 +81,10 @@ in your environment. Then you are free to use the library.
    It displays the output on the console and returns nothing.
    An example of this function is:
 ```c++
-    #include "c_io.hpp"
+    #include "cppio.hpp"
     #include<string>
     using namespace std;
+    using namespace cppIO;
     int main(){
         int num = input<int>("Enter an integer: ");
         log(num);
@@ -75,11 +93,12 @@ in your environment. Then you are free to use the library.
         return 0;
     } 
 ```
-`👉 log( ) function supports output multiple variables`
+`👉 log() function supports output multiple variables`
 ```c++
-    #include "c_io.hpp"
+    #include "cppio.hpp"
     #include<string>
     using namespace std;
+    using namespace cppIO;
     int main(){
         auto name = input<string>("Enter your name: ");
         auto surname = input<string>("Enter your surname: ");
@@ -89,14 +108,15 @@ in your environment. Then you are free to use the library.
         return 0;
     } 
 ```
-`👉 log( ) function supports arrays, vectors, lists, queues, stacks and maps.`
+`👉 log() function supports arrays, vectors, lists, queues, stacks and maps.`
 ### `log(array, len(array))`
 For arrays, you have to pass the array's length as second argument
 You can pass the length manually or use the len() function provided by the library
 #### Example for array:
 ```c++
-    #include "c_io.hpp"
+    #include "cppio.hpp"
     using namespace std;
+    using namespace cppIO;
     int main(){
         int array[] = {1,2,3,4,5};
         log(array,5); //Output: [1,2,3,4,5]
@@ -108,9 +128,10 @@ You can pass the length manually or use the len() function provided by the libra
 ### `log(vector)`
 #### Example for vector:
 ```c++
-    #include "c_io.hpp"
+    #include "cppio.hpp"
     #include<vector>
     using namespace std;
+    using namespace cppIO;
     int main(){
         //define a vector
         vector<int> vec;
@@ -125,9 +146,10 @@ You can pass the length manually or use the len() function provided by the libra
 ### `log(list)`
 #### Example for list:
 ```c++
-    #include "c_io.hpp"
+    #include "cppio.hpp"
     #include<list>
     using namespace std;
+    using namespace cppIO;
     int main(){
         //define a list
         list<int> list;
@@ -142,9 +164,10 @@ You can pass the length manually or use the len() function provided by the libra
 ### `log(queue)`
 #### Example for queue:
 ```c++
-    #include "c_io.hpp"
+    #include "cppio.hpp"
     #include<queue>
     using namespace std;
+    using namespace cppIO;
     int main(){
         //define a queue
         queue<int> queue;
@@ -159,9 +182,10 @@ You can pass the length manually or use the len() function provided by the libra
 ### `log(stack)`
 #### Example for stack:
 ```c++
-    #include "c_io.hpp"
+    #include "cppio.hpp"
     #include<stack>
     using namespace std;
+    using namespace cppIO;
     int main(){
         //define a stack
         stack<string> stack;
@@ -177,9 +201,10 @@ You can pass the length manually or use the len() function provided by the libra
 ### `log(map)`
 #### Example for map:
 ```c++
-    #include "c_io.hpp"
+    #include "cppio.hpp"
     #include<map>
     using namespace std;
+    using namespace cppIO;
     int main(){
       //define a map
       map<string, int> map;
@@ -195,8 +220,8 @@ You can pass the length manually or use the len() function provided by the libra
       return 0;
     } 
 ```
-### What does `c_io` mean?
-It stands for `console input/output`.
+### What does `cppio` mean?
+It stands for `c++ input/output`.
 
 ### Contributing
 Pull requests are welcome. For major changes, 
@@ -204,7 +229,7 @@ please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
 ### Version
-1.1.7
+1.1.9
 
 ### License
 [MIT](https://choosealicense.com/licenses/mit/)
@@ -216,4 +241,4 @@ on top of the `iostream` library. I'm aware of there are some more performant wa
 via dealing with more low-level details. If you have any suggestions or improvements, please feel 
 free to open an issue or a pull request. I'll be happy to learn from you.
 
-**First release on 28/12/2022 by [Utku Onur ŞAHİN](https://www.linkedin.com/in/utku-onur-sahin/)**
+**First release on 28/12/2022 by [Utku Onur Şahin](https://www.linkedin.com/in/utku-onur-sahin/)**
