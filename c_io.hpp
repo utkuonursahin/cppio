@@ -52,42 +52,46 @@ void log(T var[], int len){
 //Usage: log(variableName);
 template <typename T>
 void log(const std::vector<T> &vec){
+	std::cout<<"{";
 	for(int i : vec){
 		std::cout<<i;
-		if(i != vec.size()-1) std::cout<<" ";
+		if(i != vec.size()-1) std::cout<<",";
 	}
-	std::cout<<std::endl;
+	std::cout<<"}"<<std::endl;
 }
 //Usage: log(variableName);
 template <typename T>
 void log(const std::list<T> &list){
+	std::cout<<"{";
 	for(int i : list){
 		std::cout<<i;
-		if(i != list.size()-1) std::cout<<" ";
+		if(i != list.size()-1) std::cout<<",";
 	}
-	std::cout<<std::endl;
+	std::cout<<"}"<<std::endl;
 }
 //Usage: log(variableName);
 template <typename T>
 void log(const std::queue<T> &queue){
 	std::queue<T> q = queue;
+	std::cout<<"{";
 	while(!q.empty()){
 		std::cout<<q.front();
-		if(q.size() != 1) std::cout<<" ";
+		if(q.size() != 1) std::cout<<",";
 		q.pop();
 	}
-	std::cout<<std::endl;
+	std::cout<<"}"<<std::endl;
 }
 //Usage: log(variableName);
 template <typename T>
 void log(const std::stack<T> &stack){
 	std::stack<T> s = stack;
+	std::cout<<"{";
 	while(!s.empty()){
 		std::cout<<s.top();
-		if(s.size() != 1) std::cout<<" ";
+		if(s.size() != 1) std::cout<<",";
 		s.pop();
 	}
-	std::cout<<std::endl;
+	std::cout<<"}"<<std::endl;
 }
 //Usage: log(variableName);
 template <typename T, typename T1>

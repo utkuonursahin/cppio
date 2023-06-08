@@ -118,7 +118,7 @@ You can pass the length manually or use the len() function provided by the libra
         for(int i = 1; i <= 5; i++)
             vec.push_back(i);
         //log the vector
-        log(vec); //Output: 1 2 3 4 5
+        log(vec); //Output: {1,2,3,4,5}
         return 0;		
     } 
 ```
@@ -135,7 +135,7 @@ You can pass the length manually or use the len() function provided by the libra
         for(int i = 1; i <= 5; i++)
             list.push_back(i);
         //log the list
-        log(list); //Output: 1 2 3 4 5
+        log(list); //Output: {1,2,3,4,5}
         return 0;
     } 
 ```
@@ -152,7 +152,7 @@ You can pass the length manually or use the len() function provided by the libra
         for(int i = 1; i <= 5; i++)
             queue.push(i);
         //log the queue
-        log(queue); //Output: 1 2 3 4 5
+        log(queue); //Output: {1,2,3,4,5}
         return 0;		
     } 
 ```
@@ -170,7 +170,7 @@ You can pass the length manually or use the len() function provided by the libra
         stack.push("amazing");
         stack.push("What an");
         //log the stack
-        log(stack); //Output: What an amazing library!
+        log(stack); //Output: {What,an,amazing,library!}
         return 0;		
     } 
 ```
